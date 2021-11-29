@@ -6,6 +6,8 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { DataGrid } from "@mui/x-data-grid";
 
+import { Link } from "react-router-dom";
+
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Tooltip from "@mui/material/Tooltip";
@@ -59,7 +61,7 @@ const columns = [
   },
 ];
 
-export default function Merchant() {
+export default function Users() {
   const [rows, setRows] = React.useState([]);
   const [filterValue, setFilterValue] = React.useState();
   const [loading, setLoading] = React.useState(false);
@@ -89,7 +91,14 @@ export default function Merchant() {
   }, [filterValue]);
 
   return (
-    <Paper sx={{ maxWidth: 936, margin: "auto", overflow: "hidden" }}>
+    <Paper
+      sx={{
+        maxWidth: 1024,
+        margin: "auto",
+        overflow: "hidden",
+        paddingBottom: 5,
+      }}
+    >
       <Toolbar>
         <Grid container spacing={2} alignItems="center">
           <Grid item>
@@ -109,9 +118,15 @@ export default function Merchant() {
             />
           </Grid>
           <Grid item>
-            <Button variant="contained" sx={{ mr: 1 }}>
+            <Button
+              component={Link}
+              to="/merchants/create"
+              variant="contained"
+              sx={{ mr: 1 }}
+            >
               Add user
             </Button>
+
             <Tooltip title="Reload">
               <IconButton>
                 <RefreshIcon color="inherit" sx={{ display: "block" }} />

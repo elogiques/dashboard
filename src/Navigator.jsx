@@ -27,10 +27,11 @@ const categories = [
       {
         id: "Merchants",
         icon: <PeopleIcon />,
-        active: true,
+        // active: true,
         link: "/merchants",
       },
       { id: "Bank", icon: <DnsRoundedIcon />, link: "/banking" },
+      { id: "User", icon: <DnsRoundedIcon />, link: "/users" },
     ],
   },
 ];
